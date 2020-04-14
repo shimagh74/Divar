@@ -1,0 +1,79 @@
+.Navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.312rem 2rem;
+    border-bottom: 1px solid #ccc;
+    height: 4rem;
+    background-color: #fff!important;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.08)!important;
+    padding: 0 1rem;
+    z-index: 1005!important;
+    padding-top: 1rem;
+}
+
+.Navbar::after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.NavRight {
+    float: right;
+    display: flex;
+    justify-content: space-between;
+}
+
+.NavLogo {
+    width: 3rem;
+    height: 2rem;
+    background-image: url(../assets/logo.svg);
+    display: inline-block;
+    background-size: 100%;
+    margin-left: 0.625rem;
+}
+
+.NavDropDown {
+    font-family: inherit;
+    background: transparent none!important;
+    color: rgba(0,0,0,.6)!important;
+    border-radius: 0.187rem;
+    text-transform: none;
+    text-shadow: none!important;
+    box-shadow: inset 0 0 0 0.0625rem rgba(34,36,38,.15);
+    position: relative;
+    padding-left: 4.07142857em!important;
+    padding-right: 1.5rem!important;
+    border: none
+}
+
+.NavLeft {
+    float: left;
+    display: flex;
+}
+
+.NavItemsLeft {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-self: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+
+}
+
+.NavItem {
+    margin-left: 1.25rem;
+    font-size: 1rem;
+}
+
+.NavBtn {
+    font-family: inherit;
+    height: 100%;
+    color: #fff;
+    background-color: #a62626;
+    border: none;
+    border-radius: 0.312rem;
+    padding: 0.312rem 0.5rem;
+}

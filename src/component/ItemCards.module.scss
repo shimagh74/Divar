@@ -1,0 +1,155 @@
+@mixin card-bottom-border {
+    position: absolute;
+    bottom: -1.5vw;
+    display: inline-block;
+    content: "";
+    border-top: 0.065vw solid #e8e8e8;
+    margin: 0 0.5vw;
+    transform: translateY(-0.6vw);
+  }
+  
+  @mixin card-bottom-border-media-query-600 {
+    position: absolute;
+    bottom: -1.5vw;
+    display: inline-block;
+    content: "";
+    border-top: 0.5vw solid #e8e8e8;
+    margin: 0 0.5vw;
+    transform: translateY(-0.6vw);
+  }
+  // This is the body of css
+  .card {
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      &::after {
+        @include card-bottom-border();
+        animation: border-bottom 0.3s;
+        animation-fill-mode: forwards;
+        width: 0%;
+        left: 50%;
+      }
+    }
+  
+    &::before {
+      @include card-bottom-border();
+      width: 100%;
+      right: -0.9vw;
+    }
+  
+    &__image {
+      border-radius: 0.2vw;
+      width: 8.3vw;
+      margin: 0.13vw;
+    }
+  
+    &__text {
+      text-align: right;
+      padding: 0.13vw;
+      position: relative;
+  
+      &__title {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.04vw;
+        overflow: hidden;
+      }
+      &__time_posted {
+        position: absolute;
+        top: 8vw;
+        right: 0;
+        color: #bdbdbd;
+        font-size: 0.8vw;
+  
+        &__urgent {
+          font-size: 0.8vw;
+          font-weight: 500;
+          color: #be3737;
+          border: 0.065vw solid #be3737;
+          border-radius: 0.3vw;
+          padding: 0 0.1vw;
+          padding-bottom: 0.3vw;
+          padding-right: 0.2vw;
+          margin-left: 0.5vw;
+        }
+      }
+  
+      &__price {
+        position: absolute;
+        height: 2.25vw;
+        top: 5.5vw;
+        right: 0;
+        font-size: 0.8vw;
+        overflow: hidden;
+      }
+  
+      &__chat {
+        position: absolute;
+        font-size: 1.2vw;
+        top: 7vw;
+        right: 12.7vw;
+        color: gray;
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .card {
+      &::before {
+        @include card-bottom-border-media-query-600();
+        width: 100%;
+        right: -0.9vw;
+      }
+  
+      &__image {
+        border-radius: 2vw;
+        width: 30vw;
+        margin: 5vw;
+        margin-left: 0;
+      }
+  
+      &__text {
+  
+        &__title {
+          top: 4vw;
+          font-size: 4.5vw;
+          height: 7vw;
+        }
+        &__time_posted {
+          top: 30vw;
+          right: 0;
+          font-size: 3.5vw;
+  
+          &__urgent {
+            font-size: 3vw;
+            border: 0.5vw solid #be3737;
+            border-radius: 1vw;
+          }
+        }
+  
+        &__price {
+          height: 5vw;
+          top: 25vw;
+          font-size: 3.2vw;
+        }
+  
+        &__chat {
+          font-size: 5vw;
+          top: 29vw;
+          right: 52vw;
+        }
+      }
+    }
+  }
+  
+  @keyframes border-bottom {
+    100% {
+      width: 100%;
+      left: 0;
+      border-top: 0.065vw solid #be3737;
+      transform: translateY(-0.6vw);
+    }
+  }
+ 
